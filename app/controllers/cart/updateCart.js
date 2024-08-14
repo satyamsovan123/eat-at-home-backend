@@ -26,7 +26,7 @@ const updateCart = async (req, res) => {
     const newCart = await new Cart({
       user: req.user._id,
       products: products.map((product) => ({
-        product: product._id,
+        product: product.productId,
         quantity: product.quantity,
       })),
     }).save();

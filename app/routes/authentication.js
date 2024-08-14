@@ -5,7 +5,7 @@ const { signIn } = require("../controllers");
 const { forgotPassword } = require("../controllers");
 
 router.post("/signup", signUp);
-router.post("/login", signIn);
+router.post("/signin", signIn);
 router.patch("/forgot-password", forgotPassword);
 
 module.exports = router;

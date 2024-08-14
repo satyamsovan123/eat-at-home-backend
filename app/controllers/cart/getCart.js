@@ -2,7 +2,10 @@ const Cart = require("../../models/cart");
 const getCart = async (req, res) => {
   try {
     const cart = await Cart.find({ user: req.user._id })
-      .populate("products.product")
+      .populate({
+        path: "products.product",
+        select: "name price photo",
+      })
       .sort({ createdAt: -1 })
       .limit(1);
 
