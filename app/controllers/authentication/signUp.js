@@ -42,7 +42,7 @@ const signUp = async (req, res) => {
         maxAge: 6 * 60 * 60 * 1000,
       })
       .setHeader("Authorization", `${accessToken}`)
-      .send({ message: "Sign up successful." });
+      .send({ message: "Sign up successful.", data: accessToken });
   } catch (error) {
     console.error(error);
     return res

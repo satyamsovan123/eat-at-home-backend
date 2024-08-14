@@ -8,9 +8,21 @@
 	"item": [
 		{
 			"name": "cart",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:5500/api/v1/cart",
 					"host": [
@@ -29,11 +41,11 @@
 		{
 			"name": "cart",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \n}",
+					"raw": "{\n  \"products\": [\n    {\n      \"productId\": \"66bc4d6c904f510c3299bfbd\",\n      \"quantity\": 1\n    },\n    {\n      \"productId\": \"66bc4d6c904f510c3299bfbc\",\n      \"quantity\": 19\n    }\n  ]\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,7 +82,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5500/api/v1/signin",
+					"raw": "localhost:5500/api/v1/login",
 					"host": [
 						"localhost"
 					],
@@ -78,7 +90,7 @@
 					"path": [
 						"api",
 						"v1",
-						"signin"
+						"login"
 					]
 				}
 			},
@@ -115,9 +127,21 @@
 		},
 		{
 			"name": "order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:5500/api/v1/order",
 					"host": [
@@ -138,6 +162,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartId\": \"66bc559a3aba8e97daecf9d5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:5500/api/v1/order",
 					"host": [
